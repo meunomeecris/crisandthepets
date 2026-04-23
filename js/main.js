@@ -213,5 +213,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  console.log('🐾 PataVerde chargé ! Tapez le Konami Code pour une surprise… ↑↑↓↓←→←→BA');
+  console.log('🐾 Cris & the Pets chargé ! Tapez le Konami Code pour une surprise… ↑↑↓↓←→←→BA');
 });

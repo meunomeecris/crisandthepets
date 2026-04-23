@@ -1,6 +1,6 @@
 /* ===================================================
-   PataVerde – Pet Sitter Grenoble
-   CSS Principal · par [Votre Nom]
+  Cris & the Pets
+   CSS Principal · par Cris Messias
    =================================================== */
 
 /* ===== VARIABLES ===== */
@@ -166,14 +166,27 @@ ul { list-style: none; }
 
 .hero-content {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
   align-items: center;
-  text-align: center;
-  padding: 40px 24px 80px;
+  padding: 40px 60px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
 }
 
 .badge-flottant {
@@ -192,7 +205,7 @@ ul { list-style: none; }
 
 .hero h1 {
   font-family: var(--font-titre);
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 800;
   color: var(--blanc);
   line-height: 1.15;
@@ -212,6 +225,7 @@ ul { list-style: none; }
   margin-bottom: 36px;
   animation: fadeInUp 0.9s ease 0.2s both;
   max-width: 600px;
+  text-align: left;
 }
 
 .miaou {
@@ -224,7 +238,7 @@ ul { list-style: none; }
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 48px;
   animation: fadeInUp 0.9s ease 0.3s both;
 }
@@ -553,33 +567,177 @@ ul { list-style: none; }
   font-style: italic;
 }
 
-/* ===== ZONE ===== */
+/* ===== ZONE & PRICING ===== */
 .zone {
-  padding: 80px 0;
+  padding: 100px 0;
   background: var(--creme);
 }
-.zone-cities {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 8px;
+
+/* Pricing zones grid */
+.pricing-zones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
 }
-.zone-cities span {
+
+/* Individual price zone card */
+.price-zone {
   background: var(--blanc);
-  border: 2px solid var(--vert-pale);
-  color: var(--vert-fonce);
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 10px 20px;
-  border-radius: 50px;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow);
   transition: var(--transition);
-  cursor: default;
+  position: relative;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.zone-cities span:hover {
+
+.price-zone:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Zone 1 - Best value highlight
+.zone-1 {
+  border-color: var(--vert);
+  background: linear-gradient(135deg, var(--blanc) 0%, rgba(45,140,78,0.03) 100%);
+}
+
+.zone-1:hover {
+  border-color: var(--vert-clair);
+} */
+
+/* Zone header */
+.zone-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zone-badge {
+  display: inline-block;
+  background: var(--vert-pale);
+  color: var(--vert-fonce);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.zone-1 .zone-badge {
   background: var(--vert);
   color: var(--blanc);
-  border-color: var(--vert);
+}
+
+.zone-2 .zone-badge {
+  background: #ffeaa7;
+  color: #6c5ce7;
+}
+
+.zone-3 .zone-badge {
+  background: #fab1a0;
+  color: #d63031;
+}
+
+.zone-4 .zone-badge {
+  background: #a29bfe;
+  color: var(--blanc);
+}
+
+.zone-header h3 {
+  font-family: var(--font-titre);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--texte);
+}
+
+/* Zone price */
+.zone-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 8px 0;
+}
+
+.zone-price .price {
+  font-family: var(--font-titre);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--vert-fonce);
+  line-height: 1;
+}
+
+.zone-1 .price {
+  color: var(--vert);
+}
+
+.zone-price .price-unit {
+  color: var(--gris);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Zone areas */
+.zone-areas {
+  flex-grow: 1;
+}
+
+.zone-areas p {
+  color: var(--gris);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Zone tag */
+.zone-tag {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--jaune);
+  color: var(--texte);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(245,200,66,0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Pricing notes */
+.pricing-notes {
+  background: rgba(45,140,78,0.05);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  border-left: 4px solid var(--vert);
+}
+
+.note-item {
+  color: var(--gris);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.note-item:last-child {
+  margin-bottom: 0;
+}
+
+.note-item strong {
+  color: var(--texte);
+  font-weight: 700;
 }
 
 /* ===== CONTACT ===== */
@@ -724,6 +882,25 @@ ul { list-style: none; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 40px 24px 80px;
+  }
+  .hero-text {
+    align-items: center;
+    text-align: center;
+  }
+  .hero-sub {
+    text-align: center;
+  }
+  .hero-btns {
+    justify-content: center;
+  }
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+  }
   .why-inner,
   .contact-inner { grid-template-columns: 1fr; gap: 48px; }
   .why-visual { display: none; }
@@ -749,4 +926,6 @@ ul { list-style: none; }
   .nav { padding: 16px 24px; }
   .cards { grid-template-columns: 1fr; }
   .temo-cards { grid-template-columns: 1fr; }
+  .pricing-zones { grid-template-columns: 1fr; }
+  .zone-tag { position: static; margin-top: 12px; width: fit-content; }
 }
