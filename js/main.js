@@ -48,37 +48,56 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== FORMULAIRE CONTACT =====
   const form = document.getElementById('contactForm');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Animation de confirmation
       const btn = form.querySelector('.btn-primary');
       const original = btn.textContent;
-      btn.textContent = '🐾 Message envoyé ! Miaou !';
-      btn.style.background = '#2d8c4e';
+      btn.textContent = '⏳ Envoi en cours...';
       btn.disabled = true;
 
-      // Message de succès
-      const msg = document.createElement('p');
-      msg.textContent = '✅ Super ! Je vous réponds dans les 24h. Promis (sauf enlèvement par chat).';
-      msg.style.cssText = `
-        color: #f5c842;
-        font-weight: 700;
-        text-align: center;
-        margin-top: 16px;
-        font-size: 0.95rem;
-        animation: fadeInUp 0.5s ease;
-      `;
-      form.appendChild(msg);
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
 
-      // Réinitialiser après 5 secondes
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.disabled = false;
-        btn.style.background = '';
-        msg.remove();
-        form.reset();
-      }, 5000);
+        if (response.ok) {
+          btn.textContent = '🐾 Message envoyé ! Miaou !';
+          btn.style.background = '#2d8c4e';
+
+          const msg = document.createElement('p');
+          msg.textContent = '✅ Super ! Je vous réponds dans les 24h. Promis (sauf enlèvement par chat).';
+          msg.style.cssText = `
+            color: #f5c842;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.95rem;
+            animation: fadeInUp 0.5s ease;
+          `;
+          form.appendChild(msg);
+
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.disabled = false;
+            btn.style.background = '';
+            msg.remove();
+            form.reset();
+          }, 5000);
+        } else {
+          throw new Error('Erreur envoi');
+        }
+      } catch (err) {
+        btn.textContent = '❌ Oups ! Réessayez ou écrivez-moi directement';
+        btn.style.background = '#c0392b';
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.disabled = false;
+          btn.style.background = '';
+        }, 4000);
+      }
     });
   }
 

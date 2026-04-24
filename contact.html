@@ -11,20 +11,20 @@
         <a href="https://wa.me/33774310509" class="contact-link">💬 WhatsApp disponible</a>
       </div>
     </div>
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mzdyoeeq" method="POST">
       <div class="form-row">
-        <input type="text" placeholder="Votre prénom" required />
-        <input type="email" placeholder="Votre email" required />
+        <input type="text" name="prenom" placeholder="Votre prénom" required />
+        <input type="email" name="email" placeholder="Votre email" required />
       </div>
-      <input type="text" placeholder="Votre animal (nom & espèce 🐾)" />
-      <select>
+      <input type="text" name="animal" placeholder="Votre animal (nom & espèce 🐾)" />
+      <select name="service">
         <option value="">Quel service vous intéresse ?</option>
         <option>Visite à domicile</option>
         <option>Promenade</option>
         <option>Garde à domicile</option>
         <option>Autre</option>
       </select>
-      <textarea placeholder="Dites-moi tout ! Dates, besoins particuliers, allergies au miaou…" rows="4"></textarea>
+      <textarea name="message" placeholder="Dites-moi tout ! Dates, besoins particuliers, allergies au miaou…" rows="4"></textarea>
       <button type="submit" class="btn-primary btn-full">Envoyer ma demande 🐾</button>
     </form>
   </div>
