@@ -4,8 +4,8 @@
    =================================================== */
 
 @font-face {
-  font-family: 'Jolly Angel';
-  src: url('../fonts/Jolly Angel.ttf') format('truetype');
+  font-family: 'child-hood';
+  src: url('../fonts/child-hood.regular.otf') format('truetype');
   font-display: swap;
 }
 
@@ -27,8 +27,8 @@
   --radius-lg:   28px;
   --shadow:      0 4px 24px rgba(45,140,78,0.13);
   --shadow-lg:   0 12px 48px rgba(45,140,78,0.18);
-  /* --font-titre:  'Baloo 2', cursive;*/
-  --font-titre: 'Jolly Angel', cursive;
+  /* --font-titre:  'Baloo 2', cursive; */
+  --font-titre: 'child-hood', cursive;
   --font-corps:  'Nunito', sans-serif;
   --transition:  0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
