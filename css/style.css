@@ -12,10 +12,10 @@
 
 /* ===== VARIABLES ===== */
 :root {
-  --vert:        #2d8c4e;
-  --vert-clair:  #4ab36a;
+  --vert:        #78AD37;
+  --vert-clair:  #9CD15B;
   --vert-pale:   #e8f7ed;
-  --vert-fonce:  #1a5c33;
+  --vert-fonce:  #00592F;
   --jaune:       #f5c842;
   --orange:      #ff7043;
   --blanc:       #ffffff;
@@ -27,8 +27,8 @@
   --radius-lg:   28px;
   --shadow:      0 4px 24px rgba(45,140,78,0.13);
   --shadow-lg:   0 12px 48px rgba(45,140,78,0.18);
-  /* --font-titre:  'Baloo 2', cursive; */
-  --font-titre: 'child-hood', cursive;
+  --font-titre:  'Baloo 2', cursive;
+  /* --font-titre: 'child-hood', cursive; */
   --font-corps:  'Nunito', sans-serif;
   --transition:  0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
