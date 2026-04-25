@@ -5,22 +5,23 @@
 
 /* ===== VARIABLES ===== */
 :root {
-  --vert:        #78AD37;
-  --vert-clair:  #9CD15B;
-  --vert-pale:   #e8f7ed;
-  --vert-fonce:  #00592F;
+  --vert:        #61B260;
+  --vert-clair:  #C0F9BF;
+  --vert-pale:   #DCF9DC;
+  --vert-fonce:  #81E380;
   --jaune:       #f5c842;
   --orange:      #ff7043;
   --blanc:       #ffffff;
   --creme:       #fdfaf5;
   --gris:        #6b7280;
   --gris-clair:  #f3f4f6;
-  --texte:       #1a2e1e;
+  --texte:       #102C1B;
   --radius:      16px;
   --radius-lg:   28px;
   --shadow:      0 4px 24px rgba(45,140,78,0.13);
   --shadow-lg:   0 12px 48px rgba(45,140,78,0.18);
-  --font-titre:  'Baloo 2', cursive;
+  /* --font-titre:  'Baloo 2', cursive; */
+  --font-titre: "Bubblegum Sans", sans-serif;
   --font-corps:  'Nunito', sans-serif;
   --transition:  0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
