@@ -108,6 +108,12 @@ ul { list-style: none; }
   letter-spacing: -0.5px;
 }
 
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
 .nav-links {
   display: flex;
   gap: 32px;
